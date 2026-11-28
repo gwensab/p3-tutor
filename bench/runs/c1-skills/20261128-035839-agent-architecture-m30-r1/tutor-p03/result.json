@@ -1,0 +1,129 @@
+{
+  "duration_api_ms": 15987,
+  "stop_reason": "end_turn",
+  "session_id": "46c44c31-716a-475f-9b88-ad09e2127304",
+  "total_cost_usd": 0.09860380000000002,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 16050,
+    "cache_read_input_tokens": 152698,
+    "output_tokens": 1911,
+    "output_tokens_details": {
+      "thinking_tokens": 593
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 16050,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 316,
+        "cache_read_input_tokens": 30281,
+        "cache_creation_input_tokens": 791,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 791
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 1911,
+      "cacheReadInputTokens": 152698,
+      "cacheCreationInputTokens": 16050,
+      "webSearchRequests": 0,
+      "costUSD": 0.09860380000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 593,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 16050,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Jg1wCr1DZ78P3kdC2qeqt2",
+      "tool_input": {
+        "command": "cd \"C:/Users/gpsab/AppData/Local/Temp/p3-st6sfo5r\" && for f in MISSION.md PREFERENCES.md NOTES.md learning-records/*; do echo \"=== $f\"; cat \"$f\"; done; echo; ls . lessons cheatsheets quizzes grades; grep -n -i -A25 'learning record' FORMATS.md",
+        "description": "Read learner files and record format"
+      }
+    }
+  ],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 10,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Saved a note about this memory question; now sending the answer.\n\nNo, a language model doesn't remember earlier conversations on its own. Each call starts fresh: it has what it learned in training plus the text you give it in that call. Chat apps that seem to remember are saving text and feeding it back in.\n\nSay Sam tells your assistant on Monday, \"I finished laser cutter training.\" For it to know that next week:\n\n1. **Save:** your program writes the fact to storage under Sam's ID, because the chat itself won't update the model.\n2. **Load:** when Sam returns, your program looks up that record.\n3. **Include:** it adds the record to the model's input, along with the new question.\n\n```python\nnotes = load_notes(\"sam\")  # your code\nprompt = f\"Student notes: {notes}\\nQuestion: {question}\"\n```\n\nYou decide what's worth saving. More included text also costs more per request.\n\n**Your turn:** what's one thing your assistant should save about a student, and what could it safely forget?",
+  "ttft_ms": 2120,
+  "type": "result",
+  "duration_ms": 16829,
+  "uuid": "dbc145f2-c179-4460-8934-5c3d7262d381",
+  "ttft_stream_ms": 999,
+  "time_to_request_ms": 556,
+  "first_content_frame_ms": 999,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 1911,
+      "cacheReadInputTokens": 152698,
+      "cacheCreationInputTokens": 16050,
+      "webSearchRequests": 0,
+      "costUSD": 0.09860380000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 593,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 16050,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-10T23:03:23.446Z"
+}

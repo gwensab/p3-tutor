@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your assistant's program has just made model call 2 in a conversation with a student. What does the model carry over from call 1 into call 2?",
+      "options": [
+        {"id": "a", "text": "Everything it read in call 1, held inside the model itself"},
+        {"id": "b", "text": "Only a short summary that the model writes by itself"},
+        {"id": "c", "text": "Only what the program sends again as part of call 2"},
+        {"id": "d", "text": "Nothing, so each call sees only the newest message"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An agent run makes three model calls. Call 1 reads 550 tokens (system prompt, tool descriptions and the question). After call 1 the model writes a 30-token tool request, and the tool result is 400 tokens. After call 2 the model writes another 30-token tool request, and that tool result is 1,000 tokens. Call 3 writes the final answer. Each call reads the whole history so far. How many input tokens are read in total across the three calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your makerspace assistant must answer questions from twelve machine manuals totalling about 600 pages. Which design fits best, given a small model budget?",
+      "options": [
+        {"id": "a", "text": "Put all twelve manuals in the system prompt on every call"},
+        {"id": "b", "text": "Put only the manuals' tables of contents in the context"},
+        {"id": "c", "text": "Rely on the model to recall the manuals from training"},
+        {"id": "d", "text": "Search the manuals and return only the best few passages"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "On Monday a student tells your assistant they finished the laser cutter training. On Wednesday, in a new session, the assistant asks them again. In one or two sentences, why does this happen, and what change to the program fixes it?"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A model with a very large context window is available. Give one reason, other than the window being full, to keep the assistant's context small anyway."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The difference is who owns the control flow: in a workflow, code written in advance fixes the sequence of steps; in an agent, the model decides the next step at run time. Both can call models and use tools, so (a) and (b) are wrong, and (d) reverses the definition.",
+      "distractors": {"a": "M8", "b": "M9", "d": "M10"}
+    },
+    {
+      "id": "q2",
+      "answer": "a",
+      "rationale": "The code fixes the order of the steps, so the code owns the control flow and this is a workflow. The model is called inside steps 1 and 3, but it never chooses what happens next; labelling a question is a task inside a step, not control of the flow. Calling a system an agent just because it uses a model (b, c) or has several steps (d) is a mistake.",
+      "distractors": {"b": "M8", "c": "M8", "d": "M9"}
+    },
+    {
+      "id": "q3",
+      "answer": "d",
+      "rationale": "When the steps and their order are known in advance, a fixed workflow is the better choice: it is predictable, easier to test and uses fewer model calls, which matters on a small budget. An agent loop (a, b) pays for flexibility this task does not need, and splitting into several agents (c) adds even more cost. Using tools does not make something an agent.",
+      "distractors": {"a": "M7", "b": "M9", "c": "M7"}
+    },
+    {
+      "id": "q4",
+      "answer": 6,
+      "tolerance": 0.05,
+      "rationale": "The difference is 6 - 3 = 3 extra calls per request. 3 calls x $0.01 = $0.03 per request, and 200 requests x $0.03 = $6 per day. An answer of 12 is the agent's total (6 x 0.01 x 200) without subtracting the workflow's cost; 6 is the difference."
+    },
+    {
+      "id": "q5",
+      "answer": "b",
+      "rationale": "Diagnosing a warping print is open-ended: how many manual lookups are needed, and which, depends on what each lookup returns, so the model must choose the next step. Booking (a), opening hours (c) and cancelling (d) have known steps that a fixed workflow handles more cheaply and predictably.",
+      "distractors": {"a": "M7", "c": "M7", "d": "M7"}
+    },
+    {
+      "id": "q6",
+      "answer": "A fixed workflow is cheaper, more predictable and easier to test than an agent, so it is the right choice when the steps and their order are known in advance.",
+      "accepted": [
+        "Use a workflow when the steps are known ahead of time, because it costs less and behaves more predictably than an agent.",
+        "When the task is the same every time, a fixed workflow uses fewer model calls and is more reliable, so an agent's flexibility is not needed."
+      ],
+      "rationale": "Full credit needs a reason (lower cost, fewer model calls, predictability, reliability or easier testing) and the condition (the steps or path are known in advance, or the task is the same each time). A reason alone is partial. 'Agents are always better' or 'workflows are better everywhere' is wrong; the choice depends on whether the steps can be known in advance.",
+      "distractors": {}
+    }
+  ]
+}

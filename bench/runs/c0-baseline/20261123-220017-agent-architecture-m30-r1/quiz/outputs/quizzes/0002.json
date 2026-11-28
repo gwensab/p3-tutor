@@ -1,0 +1,67 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows, agents and who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which statement best separates a workflow from an agent?",
+      "options": [
+        {"id": "a", "text": "A workflow calls tools, while an agent only writes text replies"},
+        {"id": "b", "text": "A workflow uses a small model, while an agent uses a large one"},
+        {"id": "c", "text": "In a workflow, code sets the steps; in an agent, the model does"},
+        {"id": "d", "text": "In a workflow, the model sets the steps; in an agent, code does"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A makerspace assistant gets booking requests like 'Book the laser cutter Friday at 3'. Every request needs the same steps in the same order: read the machine and time from the message, check the calendar, create the booking, confirm it. Which design fits this part best?",
+      "options": [
+        {"id": "a", "text": "An agent that picks its own tool order on every request"},
+        {"id": "b", "text": "A fixed workflow where code runs the steps in order"},
+        {"id": "c", "text": "Several agents that debate which step should come next"},
+        {"id": "d", "text": "An agent that also rewrites its own steps after each run"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A script always calls search_manual first, then passes the search results to the model and asks it to write the answer. The model cannot choose to search again or to skip the search. In one word, is this a workflow or an agent?"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "For which makerspace question is an agent a better fit than a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "A student asks to book a machine for a time slot"},
+        {"id": "b", "text": "A student asks for the opening hours of the shop"},
+        {"id": "c", "text": "A student asks to cancel a booking they already made"},
+        {"id": "d", "text": "A student describes an odd print defect and asks why"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "At the design review, a teammate asks why the booking step should be a fixed workflow when the team has a small model budget. Which reason is strongest?",
+      "options": [
+        {"id": "a", "text": "The steps and the number of model calls are known in advance, so cost and behavior are predictable"},
+        {"id": "b", "text": "A fixed workflow can handle any request that an agent can handle"},
+        {"id": "c", "text": "Agents are unable to call tools such as a calendar service"},
+        {"id": "d", "text": "A model never makes a mistake when it runs inside a workflow"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In a design, one model call reads each incoming message and labels it 'manual question' or 'booking request'. Code then runs the fixed path that matches the label, and the model cannot change that path. Who owns the control flow here: the model or the code?"
+    }
+  ]
+}

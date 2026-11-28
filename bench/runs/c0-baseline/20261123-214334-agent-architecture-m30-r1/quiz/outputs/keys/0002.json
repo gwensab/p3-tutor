@@ -1,0 +1,45 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The difference is who owns the control flow: in a workflow, code written in advance decides the steps; in an agent, the model decides its own next step and which tool to use. Tool use (a), the number of model calls (b) and whether a model is involved (d) do not separate them, since workflows use tools and often call the model several times.",
+      "distractors": {"a": "M7", "b": "M7", "d": "M8"}
+    },
+    {
+      "id": "q2",
+      "answer": "a",
+      "rationale": "The program's code decides which branch runs next; the model's label is only an input to that code, and the model never chooses the steps or tools. So this is a workflow (a routing workflow). A model making a decision inside a step, or being called more than once, or having tools, does not make a system an agent.",
+      "distractors": {"b": "M9", "c": "M7", "d": "M9"}
+    },
+    {
+      "id": "q3",
+      "answer": 600,
+      "tolerance": 0,
+      "rationale": "The workflow costs 2 x $0.01 = $0.02 per request, so $20 covers 1000 requests. The agent costs 5 x $0.01 = $0.05 per request, so $20 covers 400. The difference is 1000 - 400 = 600 requests. An answer of 1000 or 400 stops before the subtraction."
+    },
+    {
+      "id": "q4",
+      "answer": "The steps are known in advance and never change, so fixed code does them more cheaply, faster and more predictably than a model deciding the steps.",
+      "accepted": [
+        "The steps are always the same, so code can run them in fixed order, which is cheaper and more predictable than an agent.",
+        "Because the steps are known in advance, a workflow is cheaper, faster and more reliable than letting a model choose them.",
+        "The sequence is fixed, so an agent adds cost and unpredictability without adding anything."
+      ],
+      "rationale": "Full credit needs the key reason, that the steps are known and fixed in advance, plus at least one benefit: lower cost, speed, predictability or reliability. Saying only that workflows are simpler or better, with no reference to the fixed steps, is partial. Saying that an agent cannot book or cannot use tools is wrong and shows M10."
+    },
+    {
+      "id": "q5",
+      "answer": "b",
+      "rationale": "An agent pays off when the steps cannot be known in advance: here the route from a vague description to a finished part depends on what the model finds along the way. The other three tasks have the same steps every time, so fixed code does them more cheaply and predictably.",
+      "distractors": {"a": "M10", "c": "M10", "d": "M10"}
+    },
+    {
+      "id": "q6",
+      "answer": "d",
+      "rationale": "An agent is not strictly better: letting the model direct the steps costs more calls, is slower and is harder to predict and test, so use fixed workflows where the steps are known and an agent only where they are not. Options a and b assume agents are strictly better or the only way to use tools (M10); option c overclaims, since agents can call tools.",
+      "distractors": {"a": "M10", "b": "M7"}
+    }
+  ]
+}

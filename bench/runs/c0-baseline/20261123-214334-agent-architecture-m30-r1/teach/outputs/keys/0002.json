@@ -1,0 +1,38 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The model keeps nothing between calls and a context ends with its session; only what the program saved and loads back survives. The calendar tool holds bookings, not training (b), and a large window (d) holds only what is sent in this session. Believing the model remembers earlier chats is M7.",
+      "distractors": {"a": "M7", "b": "M7", "d": "M8"}
+    },
+    {
+      "id": "q2",
+      "answer": 9000,
+      "tolerance": 0,
+      "rationale": "Each call re-reads the whole history: call 1 reads 1,500; call 2 reads 2,000; call 3 reads 2,500; call 4 reads 3,000. The total is 9,000. Answering 3,000 counts only the final context and misses that earlier content is sent again on every call (M9); 6,000 is 4 x 1,500, which ignores the added results."
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "Input is paid for on every call, and recall of a given fact can degrade as the context grows (context rot), so a few relevant excerpts are cheaper and more reliable. Models can read long text and accept it (a, b), and a large window does not make the model forget the system prompt (d). Thinking a big window removes the need for retrieval is M8.",
+      "distractors": {"a": "M8", "b": "M8", "d": "M8"}
+    },
+    {
+      "id": "q4",
+      "answer": "The program around the model writes it (the model only requests the write through a tool); next week the program loads the saved note and puts it into the new context.",
+      "accepted": [
+        "Your application writes it when the model asks, and loads it into the context at the start of the next session.",
+        "The program runs the write; later the program reads the note and adds it to the model's input."
+      ],
+      "rationale": "Full credit needs both parts: the program (not the model) performs the storage operation on the model's request, and the note returns by being read and placed into the next context. Saying the model stores it inside itself shows M7; naming only one part is partial."
+    },
+    {
+      "id": "q5",
+      "answer": "a",
+      "rationale": "The search result is added to the context as a tool result, alongside everything already there: rules, tool descriptions and the conversation. Retrieval does not open the whole manual (b) or send the index (d), and nothing already in the context is removed (c).",
+      "distractors": {"b": "M8", "c": "M4", "d": "M4"}
+    }
+  ]
+}

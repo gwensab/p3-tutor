@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "In step 5 of a request, your assistant's model uses a booking detail it got from a tool in step 2. Which statement correctly explains how the model has that detail at step 5?",
+      "options": [
+        {"id": "a", "text": "The model stored the detail internally when it first read the result"},
+        {"id": "b", "text": "The program included the step 2 result in the input of step 5"},
+        {"id": "c", "text": "The model fetched the detail again from the booking system itself"},
+        {"id": "d", "text": "The detail stayed in the model's weights after the step 2 call"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An assistant request starts with 2,000 tokens (system prompt, tool descriptions and the question). Each of 4 tool steps adds 1,500 tokens to the history. After the 4 tool steps, the model writes its final answer, so there are 5 model calls. Ignoring caching and the tokens the model writes, how many input tokens are processed across all 5 calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student returns to the makerspace a week after their last chat. The assistant program starts a brand-new conversation and saves nothing at the end of sessions. What does the model know about the student's last visit?",
+      "options": [
+        {"id": "a", "text": "Nothing, because the old context is gone and nothing was saved"},
+        {"id": "b", "text": "Everything, because a large window keeps all past conversations"},
+        {"id": "c", "text": "A summary, because models condense old chats while idle"},
+        {"id": "d", "text": "Only the facts, because the model recognizes returning users"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A long conversation is close to the context limit. What is the name of the technique of replacing the older history with a model-written summary and continuing from that summary?"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "The assistant must answer questions from 12 machine manuals totalling about 1,500 pages. Which design best keeps cost per request low while answering from the real manuals?",
+      "options": [
+        {"id": "a", "text": "Put all 12 manuals in the system prompt, so they are always there"},
+        {"id": "b", "text": "Store the manuals and return only the best-matching passages on request"},
+        {"id": "c", "text": "Ask the model to recite each manual from what it learned in training"},
+        {"id": "d", "text": "Save every manual page into the student's notes at the first visit"}
+      ]
+    }
+  ]
+}

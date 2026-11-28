@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context and memory</title>
+  <style>
+    :root { --bg: #fffdf8; --text: #1f1d1a; --rule: #e4dfd4; --accent: #9a4517; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #171614; --text: #e9e5dc; --rule: #36332e; --accent: #eaa77a; } }
+    body { margin: 0 auto; max-width: 40rem; padding: 2rem 1.25rem; background: var(--bg); color: var(--text);
+           font-family: Charter, Cambria, Georgia, serif; line-height: 1.5; }
+    h1 { font-size: 1.6rem; } h2 { font-size: 1.1rem; margin-top: 1.5rem; }
+    a { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { text-align: left; vertical-align: top; padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--rule); }
+    @media print { :root { --bg: #fff; --text: #000; --rule: #ccc; --accent: #000; } body { padding: 0; font-size: 11pt; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Context and memory</h1>
+  <p>From <a href="../lessons/0001-context-and-memory.html">lesson 1</a>.</p>
+
+  <h2>The window</h2>
+  <ul>
+    <li>Holds: system prompt, tool definitions, messages, tool results, <strong>and the reply</strong>.</li>
+    <li>Rough size: 1 token &asymp; 4 English characters.</li>
+    <li>The model keeps nothing between calls; the history is sent (and billed) again.</li>
+    <li><strong>Window use</strong> = size of one call. <strong>Billed input</strong> = sum over all calls.</li>
+    <li>Input cost = total input tokens &divide; 1,000,000 &times; price per million.</li>
+    <li>More text can reduce accurate recall (context rot).</li>
+  </ul>
+
+  <h2>Where should this information live?</h2>
+  <table>
+    <thead><tr><th>If it is...</th><th>Then...</th></tr></thead>
+    <tbody>
+      <tr><td>Needed for the next decision</td><td>Keep it in context</td></tr>
+      <tr><td>A used, bulky tool result</td><td>Replace with a short stub</td></tr>
+      <tr><td>A long history</td><td>Compact: summarize and restart (details can be lost)</td></tr>
+      <tr><td>Useful next visit, no official source</td><td>Save a note; load it later</td></tr>
+      <tr><td>Changing or safety-critical</td><td>Look up the official record now</td></tr>
+      <tr><td>A small part of a large document</td><td>Retrieve the matching chunks</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Memory</h2>
+  <ul>
+    <li><strong>Short-term:</strong> one conversation's history. <strong>Long-term:</strong> stored across sessions.</li>
+    <li><strong>Profile:</strong> one updated record. <strong>Collection:</strong> many notes, searched.</li>
+    <li>Write during the chat (available now, may add delay) or in the background (no delay, may lag).</li>
+  </ul>
+
+  <h2>Retrieval</h2>
+  <ul>
+    <li>Prepare: split into chunks, label each with its source, index.</li>
+    <li>Query: search, add the top chunks to context.</li>
+    <li>Embeddings match meaning; keyword search (BM25) matches exact codes and names.</li>
+  </ul>
+</main>
+</body>
+</html>

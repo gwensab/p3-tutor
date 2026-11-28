@@ -1,0 +1,49 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "The code decides the order of the steps, so the code owns the control flow and the system is a workflow; the model only fills in one step. Using a model (a) or calling tools (d) does not make a system an agent; what matters is who decides what happens next. Option c has the owner wrong.",
+      "distractors": {"a": "M7", "c": "M7", "d": "M8"}
+    },
+    {
+      "id": "q2",
+      "answer": "c",
+      "rationale": "In an agent, the model owns the control flow: after each result it chooses the next action or stops. In a, b and d, code fixes the path, and the model only writes text or picks a label for a branch the code already defined. Choosing a label (b) is routing, still a workflow.",
+      "distractors": {"a": "M7", "b": "M7", "d": "M7"}
+    },
+    {
+      "id": "q3",
+      "answer": "d",
+      "rationale": "Booking has known steps in a known order, so code can run them predictably, with few model calls and low cost. The other tasks cannot be mapped out in advance, which is where an agent's flexibility pays off. Picking one of them shows the belief that the more autonomous design is always the better one.",
+      "distractors": {"a": "M9", "b": "M9", "c": "M9"}
+    },
+    {
+      "id": "q4",
+      "answer": 3000,
+      "tolerance": 0,
+      "rationale": "The difference is 5 - 2 = 3 extra calls per request, and 3 x 1,000 = 3,000. This is the cost of an agent's flexibility, and why a fixed workflow is cheaper when the steps are known."
+    },
+    {
+      "id": "q5",
+      "answer": "No: the code decides the steps and their order, so it is a workflow; it would be an agent only if the model decided what to do next.",
+      "accepted": [
+        "No, the control flow belongs to the code, not the model, so it is a workflow and not an agent.",
+        "No, it is a workflow: the path is fixed in code and the model only does text within the steps.",
+        "No, using a model and tools does not make it an agent; the model must direct the steps itself."
+      ],
+      "rationale": "Full credit needs the verdict (not an agent, a workflow) and the reason: who owns the control flow. Saying yes, because a model and tools are involved, shows M7 or M8. Saying no without the control-flow reason is partial."
+    },
+    {
+      "id": "q6",
+      "answer": "Because the steps and their order are known in advance, code can run them directly, which is more predictable, cheaper in model calls and easier to test than letting a model decide.",
+      "accepted": [
+        "The steps never change, so a fixed workflow is cheaper and more reliable than an agent.",
+        "Since the steps are always the same, code can run them with fewer model calls, lower cost and more predictable results.",
+        "The steps are known ahead of time, so an agent's flexibility adds cost and risk without any benefit."
+      ],
+      "rationale": "Any one of predictability, lower cost (fewer model calls), or easier testing, tied to the steps being fixed and known, is full credit. A reason that does not use the fixed steps, such as agents being too advanced, is wrong."
+    }
+  ]
+}

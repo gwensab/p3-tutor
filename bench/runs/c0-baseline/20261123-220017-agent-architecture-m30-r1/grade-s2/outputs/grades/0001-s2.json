@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. What makes a system an agent is the loop: the model picks an action, the program runs it, and the result comes back for the next step. A longer prompt or a bigger model only changes what a single call can do."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. The model only writes a structured request: the tool's name plus arguments, here the laser cutter and tomorrow's date. The program around it then runs check_calendar. This is different from your first attempt, so it looks like that point has stuck."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "You chose to let it run longer and it will eventually fix the bug. It is tempting because each step looks like progress. But the agent is repeating the same edit and getting the same failing test, so more steps add nothing, and they cost money. The safeguard is a stopping condition, such as a step limit, that ends the loop and reports back to a person. For our small budget, that limit is also a cost cap."
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "Your number, 4, is right, and you counted it correctly: three tool requests plus the final answer. The reason is off, though. You wrote that the model runs each tool itself, but the program runs the tools. The model only asks for one each time it is called. That is why the count works: one model call for each input it receives, which is the question and then the three tool results. The tool runs themselves are not model calls."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right, and you gave both halves: the result goes back in as the next input, and the model uses it to decide what to do next. Your group-chat comparison fits well, because the model sees the reply and then takes its turn. Note that the program is the one that posts the reply and calls the model again."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "You have part of it: the model does go by what it is told about each tool, and a name like check_calendar does help. But the name alone is not enough. The model is given a description for each tool: its name, what it does and the parameters it takes. It picks the tool whose description fits the request. A vague description or a misleading name can make it pick wrongly, so the descriptions you write for the makerspace tools matter a lot. Your first attempt mentioned the description, so try to bring that back."
+    }
+  ],
+  "summary": "You have the core of the loop down: what makes an agent, what the model outputs when it wants a tool, and what happens to a tool result. Your score is better than the first attempt on q2 and q5. Two things to work on. First, the program runs the tools and the model only requests them, so correct the reasoning you gave for q4. Second, an agent needs a stopping condition, such as a step limit, because it will not always get there by running longer (q3). Next step: write a one-sentence description for the check_calendar tool, then say how the model would use it and what limit you would put on the loop. After that we can move on to context and memory."
+}

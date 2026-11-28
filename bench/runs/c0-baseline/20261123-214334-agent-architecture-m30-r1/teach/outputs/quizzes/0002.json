@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student finished laser-cutter training on Monday and chatted with your assistant. The next Monday she opens a new chat. The assistant uses only a model and a calendar tool, with nothing saved. What does it know about her training?",
+      "options": [
+        {"id": "a", "text": "It knows it, because the model keeps every earlier chat"},
+        {"id": "b", "text": "It knows it, because the calendar tool stores her record"},
+        {"id": "c", "text": "It knows nothing, because the earlier chat's context is gone"},
+        {"id": "d", "text": "It knows it, because its context window is large enough"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "In one request, the system prompt, tool descriptions and question total 1,500 tokens. The model makes four calls, and each of the first three calls ends with a tool request whose result adds 500 tokens to the history. Ignoring the model's own short tool requests, how many input tokens are read across all four calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your sponsor's model has a window big enough to hold all the makerspace manuals. Which is the strongest reason to still search the manuals and send only a few excerpts?",
+      "options": [
+        {"id": "a", "text": "Manuals pasted into a prompt are rejected by the model"},
+        {"id": "b", "text": "Retrieval is needed because models cannot read long text"},
+        {"id": "c", "text": "Excerpts keep every call cheaper and recall of facts better"},
+        {"id": "d", "text": "A big window makes the model forget the system prompt"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "In one or two sentences: when an agent saves a note about a student for next week, which part of the system actually writes the note to storage, and how does the note get back into the model's view next week?"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student asks about the water-jet cutter's pressure limit. The assistant calls search_manuals, and the search returns the three closest chunks of the water-jet manual. What does the model see when it writes its answer?",
+      "options": [
+        {"id": "a", "text": "The three chunks, plus the rules, tools and chat so far"},
+        {"id": "b", "text": "The whole water-jet manual, which the search has opened"},
+        {"id": "c", "text": "Only the three chunks, with the chat and rules removed"},
+        {"id": "d", "text": "The index of every manual, ranked by closeness to the question"}
+      ]
+    }
+  ]
+}

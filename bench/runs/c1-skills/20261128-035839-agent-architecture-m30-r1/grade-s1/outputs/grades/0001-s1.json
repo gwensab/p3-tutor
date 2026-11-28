@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s1",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct: what makes an agent is the loop, where the model picks actions, they are run, and the results come back."
+    },
+    {
+      "id": "q2",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "You chose (a), that the model opens the booking system and reads the entries itself. It's tempting because chat apps make it look that way, but a model only takes text in and writes text out. The answer is (c): the model writes a request, your program runs the tool, and the result goes back to the model. For example: the model outputs check_calendar(machine=\"laser cutter\", date=\"2026-11-28\"), then your Python function queries the calendar. Next time, ask of each step: is the model writing text, or is the program doing something?"
+    },
+    {
+      "id": "q3",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct: a step limit is a stopping condition, so it ends a repeating loop and reports back what happened."
+    },
+    {
+      "id": "q4",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "You answered 1, with the model running all three tools itself; it can't, because it only writes text, including requests for tools. Your program runs each tool, then calls the model again (sends it a new input) so it can read the result. That makes 4 model calls:\n1. Question in, requests check_calendar.\n2. Calendar result in, requests search_manuals.\n3. Manual result in, requests check_training_record.\n4. Training result in, writes the final answer.\nNext time, count one call per tool request plus one for the answer, which also matters for your budget."
+    },
+    {
+      "id": "q5",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "You're right that the program sends the result back to the model. The question also asked why, and that part is missing. The model needs the result in its next input to decide its next step, such as requesting another tool, or to write the final answer; it hasn't seen the result until the program sends it. For example, a calendar result showing 3 pm is free lets the model say so. Next time, answer both halves: what happens and why."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": "M3",
+      "feedback": "Your first part is right: the model gets each tool's name and description and picks the one that fits the request. The claim that it remembers its picks from earlier sessions is wrong. A model keeps nothing between calls by itself; it knows its training plus the text in its current input. To use past choices, your program would have to save them and put them into that input. When you design the assistant, ask who stores each piece of information and how it reaches the model."
+    }
+  ],
+  "summary": "You have: what makes a system an agent (q1), a step limit as a safeguard (q3), choosing tools from their descriptions (q6), and results going back to the model (q5).\nReview first: the model only writes a request; your program runs the tool and calls the model again (q2, q4).\nReview second: nothing is remembered between sessions unless your program saves it and sends it back in (q6). Also give the reason when asked for one (q5).\nNext step: trace \"Is the laser cutter free tomorrow at 3 pm, and do I need training?\" on paper. Label each step \"model\" or \"program\", then count the model calls."
+}

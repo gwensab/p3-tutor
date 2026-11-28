@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cheat sheet: context and memory in an agent</title>
+<style>
+  body { max-width: 42rem; margin: 0 auto; padding: 2rem 1rem; font-family: Georgia, serif; line-height: 1.5; }
+  h1 { font-size: 1.5rem; } h2 { font-size: 1.1rem; margin-top: 1.5rem; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td { border-bottom: 1px solid #ccc; padding: 0.4rem; text-align: left; vertical-align: top; }
+</style>
+</head>
+<body>
+<h1>Context and memory in an agent</h1>
+<p>From <a href="../lessons/0001-context-and-memory-in-an-agent.html">lesson 1</a>.</p>
+<h2>Where does it live?</h2>
+<table>
+  <thead><tr><th>Home</th><th>Put there</th><th>Lasts</th></tr></thead>
+  <tbody>
+    <tr><td>Context (system prompt)</td><td>Small, always needed, rarely changes (rules, role)</td><td>One call, rebuilt each time</td></tr>
+    <tr><td>Message history</td><td>The current conversation and tool results</td><td>One session; resent on every call</td></tr>
+    <tr><td>Notes store</td><td>Small facts about a user to reuse later (training status, preferences)</td><td>Across sessions, if the program saves and reloads</td></tr>
+    <tr><td>Retrieval store</td><td>Large documents; fetch a few chunks per question</td><td>Permanent; only fetched chunks enter the context</td></tr>
+    <tr><td>Live tool</td><td>Data that changes (calendar)</td><td>Read fresh each time</td></tr>
+  </tbody>
+</table>
+<h2>Rules of thumb</h2>
+<ul>
+  <li>The model sees only the current call's context; it keeps nothing itself.</li>
+  <li>Total input cost = sum of every call's input, because each call re-reads the history.</li>
+  <li>When the history grows: trim old tool results, summarize, drop the oldest, or move facts to notes.</li>
+  <li>Wrong answer and the needed passage is missing from the context: debug retrieval. Passage present: debug the prompt or model.</li>
+</ul>
+</body>
+</html>

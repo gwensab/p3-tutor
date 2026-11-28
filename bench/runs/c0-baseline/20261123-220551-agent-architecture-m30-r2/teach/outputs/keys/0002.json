@@ -1,0 +1,44 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The model keeps nothing between calls; the program carries the conversation by sending the message history again on each call. Option a is the misconception that the model itself remembers. Option d is also wrong, because the program normally resends the whole history, not only the newest message.",
+      "distractors": {"a": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 3540,
+      "tolerance": 0.5,
+      "rationale": "Call 1 reads 550. Call 2 reads 550 + 30 + 400 = 980. Call 3 reads 980 + 30 + 1000 = 2010. Total 550 + 980 + 2010 = 3540. An answer of 2010 counts only the final size and misses that each call re-reads the history."
+    },
+    {
+      "id": "q3",
+      "answer": "d",
+      "rationale": "Retrieval keeps the manuals outside the context and brings in only the few relevant passages, which keeps cost down and gives the model less to sift. Pasting everything (a) is paid for on every call and may exceed the window; tables of contents alone (b) cannot answer detailed questions; recall from training (c) is unreliable for a specific makerspace's manuals."
+    },
+    {
+      "id": "q4",
+      "answer": "A new session starts with an empty context, so the Monday statement was lost when the session ended; the program must save the training status to storage (a file or database) and load it, or fetch it with a tool, in later sessions.",
+      "accepted": [
+        "The context does not survive between sessions; save the fact in a notes store or database and load it at the start of the next session.",
+        "Nothing was saved, so the new session had no record; store the training status outside the context and read it back in."
+      ],
+      "rationale": "Full credit needs both the cause (the context is gone at the end of the session, nothing was stored) and the fix (save it outside the context and reload or fetch it). The cause alone is partial. Saying the model forgot over time, or that a bigger window would fix it, is wrong and shows M3.",
+      "distractors": {}
+    },
+    {
+      "id": "q5",
+      "answer": "Cost: every call re-reads the whole context, so more tokens cost more on every step; or accuracy: the model recalls details less reliably as the context grows.",
+      "accepted": [
+        "It costs more because every call re-reads it",
+        "Cost per request rises with context size",
+        "The model gets worse at finding details in a long context",
+        "Context rot: accuracy drops as the context grows",
+        "Slower and more expensive"
+      ],
+      "rationale": "Either cost (input is re-read and billed on each call) or reduced accuracy with long context (context rot) is a full answer. Answers about the window limit itself do not meet the question."
+    }
+  ]
+}

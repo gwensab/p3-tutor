@@ -1,0 +1,62 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents: who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "In a makerspace booking request, your Python code always runs the same three steps in this order: it calls check_calendar, then calls the model once to pick the best free slot, then calls book_slot. Who owns the control flow, and what is this system?",
+      "options": [
+        {"id": "a", "text": "The model owns it, so this is an agent, because a model chooses the slot"},
+        {"id": "b", "text": "The code owns it, so this is a workflow, because the steps are fixed in advance"},
+        {"id": "c", "text": "The model owns it, so this is a workflow, because the tools run in sequence"},
+        {"id": "d", "text": "The code owns it, so this is an agent, because the program calls the tools"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which of these designs for the makerspace assistant is an agent rather than a workflow?",
+      "options": [
+        {"id": "a", "text": "Code always searches the manuals, then asks the model to write an answer from the passages"},
+        {"id": "b", "text": "Code asks the model to label each question as manual or booking, then runs a fixed handler"},
+        {"id": "c", "text": "A loop where the model reads each tool result and picks the next tool or the final answer"},
+        {"id": "d", "text": "A script that books the machine, then asks the model to write the confirmation message"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your sponsor's model budget is small. Which part of the makerspace assistant is the best candidate for a fixed workflow instead of an agent?",
+      "options": [
+        {"id": "a", "text": "Helping a student work out why their 3D print keeps failing on the same layer"},
+        {"id": "b", "text": "Answering open questions that may need several manuals, the calendar and training records"},
+        {"id": "c", "text": "Handling a vague request such as \"I need to make a bracket, what should I use?\""},
+        {"id": "d", "text": "Booking a slot: check the calendar, book it if free, then send the confirmation"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "A fixed workflow for answering a manual question makes exactly 2 model calls per request. An agent version of the same feature averages 5 model calls per request. Over 1,000 requests, how many more model calls does the agent version make than the workflow? Count model calls only, not tokens.",
+      "unit": "model calls"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A teammate says: \"Our assistant uses a model and tools, so it is an agent.\" In your design the code always runs the same steps in the same order, and the model only writes text inside them. In one or two sentences, is your teammate right, and why?"
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "At the design review, someone asks why the booking step is a fixed workflow and not an agent. Give one reason, in one or two sentences, that rests on the booking steps being the same every time."
+    }
+  ]
+}

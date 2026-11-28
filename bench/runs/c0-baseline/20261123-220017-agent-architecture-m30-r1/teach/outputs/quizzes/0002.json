@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday a student tells the makerspace assistant they are allergic to a certain resin. On Thursday they open a new chat and ask for a printer booking. The assistant has no saved notes and no tool that stores facts. What does the model know about the allergy?",
+      "options": [
+        {"id": "a", "text": "Nothing, because Monday's context was not carried into the new chat"},
+        {"id": "b", "text": "It recalls the allergy, because the model learns from each chat"},
+        {"id": "c", "text": "It knows only if the student's Monday chat was long enough"},
+        {"id": "d", "text": "It recalls the allergy, because the window keeps recent days"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An agent request takes three model calls. Call 1 has an input of 1,000 tokens. The model's reply adds 50 tokens and a tool result adds 450 tokens, and both are appended to the context before call 2. Then another reply of 50 tokens and a tool result of 250 tokens are appended before call 3. Assuming the full history is re-sent each time, how many input tokens are sent in total over the three calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "The assistant must answer questions from forty machine manuals totalling 4,000 pages. Which approach is best for cost and accuracy?",
+      "options": [
+        {"id": "a", "text": "Search the manuals per question and put only the best chunks in context"},
+        {"id": "b", "text": "Paste all forty manuals into the system prompt of every request"},
+        {"id": "c", "text": "Paste a one-line summary of each manual and answer only from those"},
+        {"id": "d", "text": "Let the model answer from training and skip the manuals entirely"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "In one or two sentences, give one reason why a model with a very large context window still should not be handed every manual page on every call."
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A student's training status must still be known next month. In one or two sentences, say where it should be kept and what the program does at the start of the next session."
+    }
+  ]
+}

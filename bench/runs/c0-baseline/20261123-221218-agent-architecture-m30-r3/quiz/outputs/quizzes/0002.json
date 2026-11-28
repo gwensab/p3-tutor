@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows, agents and who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which statement correctly tells a workflow apart from an agent?",
+      "options": [
+        {"id": "a", "text": "A workflow never calls a model, while an agent always calls one"},
+        {"id": "b", "text": "A workflow uses a single tool, while an agent can use many tools"},
+        {"id": "c", "text": "In a workflow your code fixes the steps; in an agent the model chooses them"},
+        {"id": "d", "text": "In a workflow the model chooses the steps; in an agent your code fixes them"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "In the makerspace assistant, the code always runs the same three steps in the same order: (1) the model labels the question as 'machine' or 'booking'; (2) the code looks up the matching manual section or the calendar; (3) the model writes the reply from what was found. Who owns the control flow, and what kind of system is this?",
+      "options": [
+        {"id": "a", "text": "The code owns it, so this is a workflow, although the model is called twice"},
+        {"id": "b", "text": "The model owns it, so this is an agent, because the model is called"},
+        {"id": "c", "text": "The model owns it, so this is an agent, because the model picks the label"},
+        {"id": "d", "text": "The code owns it, so this is an agent, because there are several steps"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Every booking request needs the same four steps in the same order: read the calendar, check the machine's rules, book the slot if it is free, send a confirmation. The team has a small model budget. Which design fits this part of the assistant best?",
+      "options": [
+        {"id": "a", "text": "An agent loop, so the model can reorder the steps for each request"},
+        {"id": "b", "text": "An agent loop, because the steps all call tools to do their work"},
+        {"id": "c", "text": "Several agents, one for each step, so each can reason separately"},
+        {"id": "d", "text": "A fixed workflow, because the steps and their order are known in advance"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "Assume every model call costs $0.01. A fixed workflow for a booking request always makes 3 model calls. An agent loop for the same request averages 6 model calls. The assistant handles 200 booking requests a day. How many more dollars per day does the agent loop cost than the workflow?",
+      "unit": "dollars"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which request is the best case for an agent loop rather than a fixed workflow, because the steps cannot be known before the request arrives?",
+      "options": [
+        {"id": "a", "text": "Book the laser cutter for Friday at 2 pm"},
+        {"id": "b", "text": "My 3D print keeps warping; what do the manuals suggest I try?"},
+        {"id": "c", "text": "What time does the makerspace open on Saturdays?"},
+        {"id": "d", "text": "Cancel my booking number 4412 for tomorrow"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A teammate says: 'Agents are the modern approach, so we should build every part of the assistant as an agent.' In one or two sentences, give a reason to build a part as a fixed workflow instead, and say when that is the right choice."
+    }
+  ]
+}

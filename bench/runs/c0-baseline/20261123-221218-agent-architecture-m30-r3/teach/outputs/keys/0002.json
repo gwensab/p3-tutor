@@ -1,0 +1,32 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "The model keeps nothing between calls; the program resends the history, including the step 2 result, with every call. Choosing a, c or d shows the belief that the model remembers or can reach things by itself."
+    },
+    {
+      "id": "q2",
+      "answer": 25000,
+      "tolerance": 0,
+      "rationale": "Call inputs are 2,000, 3,500, 5,000, 6,500 and 8,000, which sum to 25,000. An answer of 8,000 counts only the final context and misses that history is resent on every call."
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "A context is discarded when the session ends and the model has no memory of its own, so without saved notes it knows nothing of the last visit."
+    },
+    {
+      "id": "q4",
+      "answer": "compaction",
+      "accepted": ["compacting", "context compaction", "summarization", "summarisation", "summarizing", "summarising", "conversation compaction"],
+      "rationale": "Compaction summarizes a conversation near the limit and restarts with the summary, keeping key decisions and dropping redundant output."
+    },
+    {
+      "id": "q5",
+      "answer": "b",
+      "rationale": "Retrieval loads only the relevant chunks, so cost stays low and the answer comes from the real manual. Putting all manuals in the prompt is paid on every call and risks context rot; training does not contain the manuals; notes are for per-student facts."
+    }
+  ]
+}

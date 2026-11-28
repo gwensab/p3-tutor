@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows or agents: who decides the next step?",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your team sketches four designs for answering a question about a machine. In which design does the model, rather than your code, own the control flow (the choice of which step happens next)?",
+      "options": [
+        {"id": "a", "text": "Code searches the manuals, then asks the model to answer from the page found"},
+        {"id": "b", "text": "Code calls the model three times in a set order: rephrase, answer, check"},
+        {"id": "c", "text": "After each result, the model chooses another tool or gives its final answer"},
+        {"id": "d", "text": "Code calls the model once, with a long prompt listing five steps to follow"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A model call labels each student question \"manual\" or \"booking\". Your code reads the label and runs the steps your team wrote for that label, ending with a model call that writes the reply. Is this system a workflow or an agent? Answer in one word."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your team will build one job as a fixed workflow. Judged by how well the steps are known beforehand, which job suits this best?",
+      "options": [
+        {"id": "a", "text": "Each Monday, fetch last week's bookings, summarize them and email staff"},
+        {"id": "b", "text": "Find an unknown bug by reading whichever files seem relevant and testing"},
+        {"id": "c", "text": "Research a student's unusual project, following up on whatever turns up"},
+        {"id": "d", "text": "Help with any problem during a build, choosing tools as the talk unfolds"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A machine must never be booked unless the student has passed its training. Which design guarantees this rule, whatever the model outputs?",
+      "options": [
+        {"id": "a", "text": "The system prompt firmly tells the model to check training before booking"},
+        {"id": "b", "text": "The model has both tools, and a step limit ends its loop after five steps"},
+        {"id": "c", "text": "The model has both tools, and their descriptions say which to call first"},
+        {"id": "d", "text": "Code checks the training record and runs the booking only if it shows a pass"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "Your assistant gets 300 requests a week. A fixed workflow uses exactly 2 model calls per request, while an agent averages 5. Assume every call costs 0.4 US cents. How many US dollars per week does the workflow save compared with the agent?",
+      "unit": "US dollars per week"
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Students report 3D print failures with many possible causes, and the best next check depends on what earlier checks showed. Judged by ability to adapt while keeping cost under control, which design fits best?",
+      "options": [
+        {"id": "a", "text": "A fixed workflow that runs the same four checks in order for every report"},
+        {"id": "b", "text": "An agent that picks each check from earlier results, with a limit on steps"},
+        {"id": "c", "text": "An agent that picks each check from earlier results until the print works"},
+        {"id": "d", "text": "A single model call that reads the first report and lists one fix to try"}
+      ]
+    }
+  ]
+}

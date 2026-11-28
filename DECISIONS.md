@@ -26,7 +26,8 @@ They are about what you chose and what you saw, and the Builder and the Guide ne
 Of everything you changed while building `c1-skills`, which one change to a skill made the biggest difference, and how do you know?
 Name the round, and give the evidence: a rating that moved, a check in `REPORT.md` that moved, or a quote from an output before and after.
 
-TODO: your answer to prompt 1.
+
+The changes to the grader skill during round 3 made the biggest difference. The type of feedback recieved in various situations became easier to understand and felt like a good length. Before the changes, a correct answer got this feedback "Correct: the loop is what makes it an agent. For "Is the laser cutter free Friday?", the model picks an action, the action is run, and the result comes back so the model can choose what to do next. A longer prompt or a bigger model changes what one call can do, but doesn't create that loop." After the changes, we got "Correct: what makes an agent is the loop, where the model picks actions, they are run, and the results come back." This makes more situational sense since we just need to confirm why the answer is correct, not over explain it.
 
 ---
 

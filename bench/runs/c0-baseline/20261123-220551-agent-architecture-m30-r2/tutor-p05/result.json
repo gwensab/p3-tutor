@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 19893,
+  "stop_reason": "end_turn",
+  "session_id": "a0ece681-f44b-4603-af8a-82c9e42ee2ff",
+  "total_cost_usd": 0.1231787,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 23754,
+    "cache_read_input_tokens": 79407,
+    "output_tokens": 2021,
+    "output_tokens_details": {
+      "thinking_tokens": 490
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 23754,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 737,
+        "cache_read_input_tokens": 37932,
+        "cache_creation_input_tokens": 850,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 850
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 2021,
+      "cacheReadInputTokens": 79407,
+      "cacheCreationInputTokens": 23754,
+      "webSearchRequests": 0,
+      "costUSD": 0.1231787,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 490,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 23754,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Short answer: I won't do the full derivation here. It also isn't the best use of your budget for the makerspace assistant. Here is the idea at your level, then what I'd do instead.\n\n**What PPO is, in one example.** Say the assistant answers \"book the laser cutter Friday at 3\". It tries a tool call and gets a reward: +1 if the booking is correct, 0 if not. The model is a policy, meaning a rule for choosing its next token. RL nudges that policy so rewarded behavior becomes more likely. The risk is that one big nudge can wreck what the model already does well. PPO (proximal policy optimization) limits each update with a clipped objective:\n\nL = E[ min( r·A, clip(r, 1−ε, 1+ε)·A ) ]\n\n- r is new probability ÷ old probability of the action taken.\n- A is the advantage: how much better that action was than average.\n- ε is a small number, such as 0.2.\n\nThe clip stops r from moving far from 1, so each step stays small. The step-by-step derivation starts from the policy gradient theorem, which is calculus on expectations. That is the \"math inside models\" your mission puts out of scope.\n\n**Two things to know before you plan around this:**\n- RL is one ingredient in good agents. Much of an agent's quality comes from the tool descriptions, the workflow design and the context it's given.\n- You can't run PPO on a hosted model. You would need an open-weights model, GPUs, a way to simulate bookings, and a reliable reward signal. That conflicts with a small budget and a five-week deadline.\n\n**What I'd do for tool-calling quality:**\n1. Write clear tool descriptions. This is one of your success criteria.\n2. Build a small test set of 20–30 real student requests, each with the tool calls you expect.\n3. Measure, fix descriptions, and re-measure.\n4. Make fixed steps, like checking the calendar before booking, a workflow instead of the model's choice.\n\nIf you later want to go deeper, an \"evals\" lesson is the natural next step. It also gives you the reward signal RL would need.\n\nDo you want to keep RL as a goal? If so, I'd update your mission to say so. Otherwise, want a 15-minute lesson on writing tool descriptions and a test set?",
+  "ttft_ms": 2067,
+  "type": "result",
+  "duration_ms": 20720,
+  "uuid": "93255afd-b9b5-4001-931e-203ecbc244a2",
+  "ttft_stream_ms": 2011,
+  "time_to_request_ms": 670,
+  "first_content_frame_ms": 2011,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 2021,
+      "cacheReadInputTokens": 79407,
+      "cacheCreationInputTokens": 23754,
+      "webSearchRequests": 0,
+      "costUSD": 0.1231787,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 490,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 23754,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-10T23:03:23.446Z"
+}

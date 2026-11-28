@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 23652,
+  "stop_reason": "end_turn",
+  "session_id": "748d8b01-627b-4769-bc6d-6654c782ae1c",
+  "total_cost_usd": 0.1448954,
+  "usage": {
+    "input_tokens": 10,
+    "cache_creation_input_tokens": 26172,
+    "cache_read_input_tokens": 158274,
+    "output_tokens": 2436,
+    "output_tokens_details": {
+      "thinking_tokens": 805
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 26172,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 594,
+        "cache_read_input_tokens": 40265,
+        "cache_creation_input_tokens": 935,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 935
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 10,
+      "outputTokens": 2436,
+      "cacheReadInputTokens": 158274,
+      "cacheCreationInputTokens": 26172,
+      "webSearchRequests": 0,
+      "costUSD": 0.1448954,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 805,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 26172,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 11,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Here's tool calling as a note-passing setup.\n\n**The analogy: a planner in a sealed room.**\nPicture a very smart planner locked in a room with no phone, no computer and no window. The room has a slot in the door. Outside is a helper who can do things: phone people, look things up, book things. Taped to the door is a menu of what the helper can do, each item with a one-line description. For example: \"Phone the dentist's office: give a day and get back the open times.\"\n\nYou slide a question in: \"Can I get a dentist appointment next week?\" The planner can't act, so they write a note and push it out: \"Phone the dentist and ask about Tuesday.\" The planner has only written. They haven't called anyone.\n\nThe helper reads the note, makes the call, and writes down what happened: \"Tuesday 2 pm is open.\" The helper slides that back in. The planner reads it and either asks for another action (\"Now check my work calendar for Tuesday\") or writes the final answer for you.\n\n**Mapping it back:**\n- The planner is the language model. It only reads and writes text.\n- The helper is your program. It does everything real.\n- The menu is the tool descriptions. The planner has never seen how the helper makes a call, so the menu's wording is all it has to choose an action.\n- A note asking for an action is a tool call. It names the action and fills in the details.\n- The reply slid back is the tool result.\n\n**Where the analogy breaks:** a real planner would remember the last note. A model doesn't. Each time, the helper slides in the whole pile of earlier notes and replies again, and the model reads it fresh. That's why context matters, which is our next topic.\n\nQuick check, in your own words: when the planner \"calls the dentist,\" who actually picks up the phone?\n\nIf you want, I can turn this into a short lesson. Quiz 0001 is still waiting to be graded whenever you're ready.",
+  "ttft_ms": 2697,
+  "type": "result",
+  "duration_ms": 24415,
+  "uuid": "f288b7ea-056f-4378-a64d-6332bfd52237",
+  "ttft_stream_ms": 2365,
+  "time_to_request_ms": 550,
+  "first_content_frame_ms": 2366,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 10,
+      "outputTokens": 2436,
+      "cacheReadInputTokens": 158274,
+      "cacheCreationInputTokens": 26172,
+      "webSearchRequests": 0,
+      "costUSD": 0.1448954,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 805,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 26172,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-10T23:03:23.446Z"
+}

@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 8978,
+  "stop_reason": "end_turn",
+  "session_id": "392cc433-c6aa-4164-95eb-f87ea725cb49",
+  "total_cost_usd": 0.11289969999999999,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 24425,
+    "cache_read_input_tokens": 41517,
+    "output_tokens": 1104,
+    "output_tokens_details": {
+      "thinking_tokens": 153
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 24425,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 413,
+        "cache_read_input_tokens": 26489,
+        "cache_creation_input_tokens": 12964,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 12964
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1104,
+      "cacheReadInputTokens": 41517,
+      "cacheCreationInputTokens": 24425,
+      "webSearchRequests": 0,
+      "costUSD": 0.11289969999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 153,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 24425,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I can't tell you whether (a) is right. I don't give out quiz answers before grading, and that includes confirming or ruling out a single option. This holds even with your TA's OK. If you want it settled before you hand in, check with your TA directly.\n\nHere's what I can do. For q2, try these two steps on your own:\n\n1. Say in your own words what the model can actually do on its own. It only produces text, so what could it produce at the moment it decides to use a tool? Compare that with what the program around it does.\n2. Take each of the four options and ask whether it describes something the model outputs, or something the program does.\n\nKeep those two jobs separate, and you can test your pick against every option, not only (a). If you tell me how you reasoned your way to (a), I can tell you whether your thinking holds together. I still won't say which letter is right.\n\nYour two attempts at this quiz are ungraded. Once you want them graded, say so and I'll grade them. Then we can go through q2 together, including why each wrong option is tempting.\n\nBefore you hand it in, try this in one sentence: when the model \"uses\" `check_calendar`, what does it do, and what does your Python program do next?",
+  "ttft_ms": 2141,
+  "type": "result",
+  "duration_ms": 9643,
+  "uuid": "72c5800c-0845-49d1-8442-9ece71601799",
+  "ttft_stream_ms": 1488,
+  "time_to_request_ms": 618,
+  "first_content_frame_ms": 1488,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1104,
+      "cacheReadInputTokens": 41517,
+      "cacheCreationInputTokens": 24425,
+      "webSearchRequests": 0,
+      "costUSD": 0.11289969999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 153,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 24425,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-10T23:03:23.446Z"
+}

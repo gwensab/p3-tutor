@@ -1,0 +1,37 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The difference is who owns the control flow: in a workflow, code fixes the sequence of steps; in an agent, the model decides the next step. Option d reverses this; a and b name differences that do not define either."
+    },
+    {
+      "id": "q2",
+      "answer": "b",
+      "rationale": "The steps are known and always the same, so code can run them in order, with the model only reading the fields from the message. This is cheaper and more predictable than letting a model choose the order each time."
+    },
+    {
+      "id": "q3",
+      "answer": "workflow",
+      "accepted": ["a workflow", "it is a workflow", "workflow."],
+      "rationale": "Code fixes the sequence (search, then answer) and the model cannot change it, so code owns the control flow. An answer of agent shows the belief that any use of tools makes a system an agent."
+    },
+    {
+      "id": "q4",
+      "answer": "d",
+      "rationale": "Diagnosing an odd defect is open-ended: the number and order of lookups cannot be known in advance, which is where an agent's model-owned control flow pays off. Booking, hours and cancelling follow predictable steps that a workflow handles."
+    },
+    {
+      "id": "q5",
+      "answer": "a",
+      "rationale": "Fixed steps mean a known, bounded number of model calls and a predictable path, which suits a small budget. Option b is false (agents handle open-ended tasks workflows cannot), c is false, and d is false because a model can still err inside a workflow."
+    },
+    {
+      "id": "q6",
+      "answer": "the code",
+      "accepted": ["code", "the code owns it", "code owns the control flow", "the program", "our code", "the developer's code", "the script"],
+      "rationale": "The model only produces a label; code decides which fixed path runs, so code owns the control flow and this is a workflow (with one model call as a routing step). An answer of the model confuses using a model's output with letting it direct the process."
+    }
+  ]
+}

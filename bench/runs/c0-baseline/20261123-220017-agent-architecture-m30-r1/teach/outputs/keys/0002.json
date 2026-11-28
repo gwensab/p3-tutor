@@ -1,0 +1,42 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "a",
+      "rationale": "The model only knows what is in its current context, and Monday's context is gone once the session ends. Nothing persists unless the program saves it and loads it back. Choosing b shows that the model learns from chats and remembers users (M3); c and d invent a carry-over that does not exist.",
+      "distractors": {"b": "M3", "c": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 4300,
+      "tolerance": 0,
+      "rationale": "Call 1: 1,000. Call 2: 1,000 + 50 + 450 = 1,500. Call 3: 1,500 + 50 + 250 = 1,800. Total 1,000 + 1,500 + 1,800 = 4,300. An answer of 1,800 counts only the last call; 2,300 counts only new text."
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "Retrieval keeps the manuals outside the context and brings in only the relevant chunks, which saves tokens and avoids long-context degradation. Pasting everything (b) is costly, may not fit and is used poorly (M7). Summaries only (c) lose the detail needed, and training knowledge (d) does not hold your manuals.",
+      "distractors": {"b": "M7"}
+    },
+    {
+      "id": "q4",
+      "answer": "It costs tokens on every call, and models use a very long context less well, so the relevant fact can be missed.",
+      "accepted": [
+        "Every token is paid for on each call, and accuracy falls in a long context.",
+        "It is expensive to re-send, and the model may overlook information in the middle of a long context.",
+        "Cost grows with context size and long contexts reduce how well the model recalls details."
+      ],
+      "rationale": "Either reason is acceptable: cost (input tokens are billed on every call) or quality (recall degrades in long contexts, the lost-in-the-middle effect). A bigger window only raises the limit, it does not mean everything is used equally well (M7). Saying that the model would not have enough room is wrong for a very large window."
+    },
+    {
+      "id": "q5",
+      "answer": "Save it outside the model, such as in a database or notes file, and at the start of the next session the program reads it and puts it into the context.",
+      "accepted": [
+        "In stored notes or a database; the program loads it into the new session's context.",
+        "In external storage that the program reads back and adds to the context when the session starts."
+      ],
+      "rationale": "Full credit needs both parts: storage outside the model and the program loading it into the next context. Only naming the storage is partial. Saying the model will remember it, or that it stays in the old context, shows M3."
+    }
+  ]
+}

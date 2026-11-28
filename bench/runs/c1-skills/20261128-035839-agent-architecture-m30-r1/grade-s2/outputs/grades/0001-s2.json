@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct: an agent is defined by the loop, where the model picks actions, they are run, and the results come back."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct: the model outputs only a request naming the tool and its arguments (the input values for that call)."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "You chose \"No change\", expecting the agent to fix the bug eventually, which is tempting because agents often do recover after a failed try. Here, though, it is still making the same edit and getting the same failing test after 40 steps, so more steps are likely to repeat that and spend model budget. The best safeguard is b, a step limit (a maximum number of loop turns) that stops the run and reports what happened. For example, with a limit of 10, your coding agent would stop at step 10 and hand the problem to a person. For every loop you design, ask: what stops it if it never succeeds?"
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "Your count of 4 is right: three calls each request one tool, and a fourth writes the answer. The mistake is \"the model can only run one tool itself\": the model runs no tools, it only outputs a request. The program runs check_calendar, sends the result back, and calls the model again, so the model can read that result before its next move. When you sketch your loop, label each step \"model\" or \"program\"."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct: the result goes back as the model's next input, so the model can use it to decide what to do next."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "You're right that the name helps: check_calendar points to the calendar. The model gets more than the name, though: the program gives it each tool's name, a description of what it does, and its parameters (the inputs it takes), and it picks the tool that fits the request. A name alone can mislead, since check_training_record doesn't say what it returns. Next, write a two-sentence description for check_calendar that covers its purpose and inputs."
+    }
+  ],
+  "summary": "What you have down: the agent loop, the model asking for a tool with a request, and the result going back into the model's next input.\nReview first: who runs the tools (q4). The program does; the model only asks. Also review stopping a stuck loop with a step limit (q3).\nThen: the model chooses tools from their full descriptions, not just their names (q6).\nNext step: sketch the loop for \"Is the laser cutter free tomorrow at 3 pm?\", label each step \"model\" or \"program\", and mark where a step limit would stop it."
+}

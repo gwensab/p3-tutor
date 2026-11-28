@@ -1,0 +1,163 @@
+{
+  "duration_api_ms": 91673,
+  "stop_reason": "end_turn",
+  "session_id": "08de781a-87cc-4924-a463-da12d1631217",
+  "total_cost_usd": 0.304037295,
+  "usage": {
+    "input_tokens": 20,
+    "cache_creation_input_tokens": 38634,
+    "cache_read_input_tokens": 338142,
+    "output_tokens": 10104,
+    "output_tokens_details": {
+      "thinking_tokens": 4042
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 38634,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 293,
+        "cache_read_input_tokens": 52657,
+        "cache_creation_input_tokens": 999,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 999
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 20,
+      "outputTokens": 10104,
+      "cacheReadInputTokens": 338142,
+      "cacheCreationInputTokens": 38634,
+      "webSearchRequests": 0,
+      "costUSD": 0.28943019999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4042,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 38634,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13850,
+      "outputTokens": 4046,
+      "cacheReadInputTokens": 5747,
+      "cacheCreationInputTokens": 9133,
+      "webSearchRequests": 1,
+      "costUSD": 0.014607095,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1485,
+      "cacheCreationEphemeral5mInputTokens": 9133,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01RErmaZHuUcx4Zs4nsKyZ1y",
+      "tool_input": {
+        "command": "cd \"C:/Users/gpsab/AppData/Local/Temp/p3-ce1ntbor\" && cat > quizzes/0002.json <<'EOF'\n{\n  \"id\": \"0002\",\n  \"objective\": \"O4\",\n  \"title\": \"Workflows or agents: who decides the next step?\",\n  \"items\": [\n    {\n      \"id\": \"q1\",\n      \"type\": \"mcq\",\n      \"objective\": \"O4\",\n      \"stem\": \"Your team sketches four designs for answering a question about a machine. In which design does the model, rather than your code, own the control flow (the choice of which step happens next)?\",\n      \"options\": [\n        {\"id\": \"a\", \"text\": \"Code searches the manuals, then asks the model to answer from the page found\"},\n        {\"id\": \"b\", \"text\": \"Code calls the model three times in a set order: rephrase, answer, check\"},\n        {\"id\": \"c\", \"text\": \"After each result, the model chooses another tool or gives its final answer\"},\n        {\"id\": \"d\", \"text\": \"Code calls the model once, with a long prompt listing five steps to follow\"}\n      ]\n    },\n    {\n      \"id\": \"q2\",\n      \"type\": \"short\",\n      \"objective\": \"O4\",\n      \"stem\": \"A model call labels each student question \\\"manual\\\" or \\\"booking\\\". Your code reads the label and runs a fixed list of steps for it, ending with a model call that writes the reply. Is this system a workflow or an agent? Answer in one word.\"\n    },\n    {\n      \"id\": \"q3\",\n      \"type\": \"mcq\",\n      \"objective\": \"O4\",\n      \"stem\": \"Your team will build one job as a fixed workflow, where code sets the steps in advance. Judged by how well the steps are known beforehand, which job suits this best?\",\n      \"options\": [\n        {\"id\": \"a\", \"text\": \"Each Monday, fetch last week's bookings, summarize them and email staff\"},\n        {\"id\": \"b\", \"text\": \"Find an unknown bug by reading whichever files seem relevant and testing\"},\n        {\"id\": \"c\", \"text\": \"Research a student's unusual project, following up on whatever turns up\"},\n        {\"id\": \"d\", \"text\": \"Help with any problem during a build, choosing tools as the talk unfolds\"}\n      ]\n    },\n    {\n      \"id\": \"q4\",\n      \"type\": \"mcq\",\n      \"objective\": \"O4\",\n      \"stem\": \"A machine must never be booked unless the student has passed its training. Which design guarantees this rule, whatever the model outputs?\",\n      \"options\": [\n        {\"id\": \"a\", \"text\": \"The system prompt firmly tells the model to check training before booking\"},\n        {\"id\": \"b\", \"text\": \"The model has both tools, and a step limit ends its loop after five steps\"},\n        {\"id\": \"c\", \"text\": \"The model has both tools, and their descriptions say which to call first\"},\n        {\"id\": \"d\", \"text\": \"Code checks the training record and runs the booking only if it shows a pass\"}\n      ]\n    },\n    {\n      \"id\": \"q5\",\n      \"type\": \"numeric\",\n      \"objective\": \"O4\",\n      \"stem\": \"Your assistant gets 300 requests a week. A fixed workflow uses exactly 2 model calls per request, while an agent averages 5. Assume every call costs 0.4 US cents. How many US dollars per week does the workflow save compared with the agent?\",\n      \"unit\": \"US dollars per week\"\n    },\n    {\n      \"id\": \"q6\",\n      \"type\": \"mcq\",\n      \"objective\": \"O4\",\n      \"stem\": \"Students report 3D print failures with many possible causes, and the best next check depends on what earlier checks showed. Judged by ability to adapt while keeping cost under control, which design fits best?\",\n      \"options\": [\n        {\"id\": \"a\", \"text\": \"A fixed workflow that runs the same four checks in order for every report\"},\n        {\"id\": \"b\", \"text\": \"An agent that picks each check from earlier results, with a limit on steps\"},\n        {\"id\": \"c\", \"text\": \"An agent that picks each check from earlier results until the print works\"},\n        {\"id\": \"d\", \"text\": \"A single model call that gets the first report and lists one fix to try\"}\n      ]\n    }\n  ]\n}\nEOF\ncat > keys/0002.json <<'EOF'\n{\n  \"id\": \"0002\",\n  \"items\": [\n    {\n      \"id\": \"q1\",\n      \"answer\": \"c\",\n      \"rationale\": \"Only in c does the model decide at run time what happens next, which makes it an agent. In a and b code fixes the sequence however many model calls there are, and in d a longer prompt is still one call and does not create a loop the model controls.\",\n      \"distractors\": {\"d\": \"M1\"}\n    },\n    {\n      \"id\": \"q2\",\n      \"answer\": \"workflow\",\n      \"accepted\": [\"a workflow\", \"workflow.\", \"a workflow.\", \"fixed workflow\", \"a fixed workflow\", \"it is a workflow\", \"it's a workflow\"],\n      \"rationale\": \"The model only supplies a label; the paths and the steps in each are written in code, so code owns the control flow. This is the routing pattern, and a model influencing which branch runs does not by itself make an agent.\"\n    },\n    {\n      \"id\": \"q3\",\n      \"answer\": \"a\",\n      \"rationale\": \"The Monday report has the same steps in the same order every time, so code can set them in advance. In the other jobs the next step depends on what is discovered along the way.\"\n    },\n    {\n      \"id\": \"q4\",\n      \"answer\": \"d\",\n      \"rationale\": \"Only code that gates the booking on the training record enforces the rule regardless of model output. Prompts (a) and tool descriptions (c) guide the model without guaranteeing its choices, and a step limit (b) bounds the number of steps, not their order.\"\n    },\n    {\n      \"id\": \"q5\",\n      \"answer\": 3.6,\n      \"tolerance\": 0.005,\n      \"rationale\": \"The agent uses 5 - 2 = 3 extra calls per request: 300 x 3 = 900 calls, and 900 x 0.4 cents = 360 cents = 3.60 dollars. An answer of 360 is in cents, and 6 is the agent's whole weekly cost rather than the saving.\"\n    },\n    {\n      \"id\": \"q6\",\n      \"answer\": \"b\",\n      \"rationale\": \"The next check depends on earlier results, which calls for the model to choose the steps, and a step limit keeps cost bounded. A fixed sequence (a) or a single call (d) cannot adapt, and running until success (c) has no guaranteed end.\",\n      \"distractors\": {\"c\": \"M6\"}\n    }\n  ]\n}\nEOF\npython -I -c \"import json;[json.load(open(f,encoding='utf-8')) for f in ('quizzes/0002.json','keys/0002.json')];print('ok')\"",
+        "description": "Write quiz 0002 and its key, then validate JSON"
+      }
+    }
+  ],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 1,
+    "requested": {
+      "background": 0,
+      "foreground": 1,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 1,
+    "spawned_by_subagents": 0,
+    "completed": 1,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {
+      "web-fetch": 1
+    }
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 13,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Your quiz on objective O4 is ready at `quizzes/0002.json`: **\"Workflows or agents: who decides the next step?\"**\n\n- **Format:** six questions, with four multiple choice, one one-word answer and one calculation.\n- **Covers:** who owns the control flow, when a fixed workflow fits, how to enforce a rule, the effect on model cost, and choosing a design for your makerspace assistant.\n- **Ahead of your lessons:** you don't have a lesson on workflows and agents yet, so treat this as a first try. You can ask for a lesson before or after taking it.\n\nTo take it here, ask me to give you quiz 0002 in the chat.\n\nSource: Anthropic, [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)",
+  "ttft_ms": 1465,
+  "type": "result",
+  "duration_ms": 93699,
+  "uuid": "f5973054-96e5-4f92-8aa9-b658f4be95b6",
+  "ttft_stream_ms": 620,
+  "time_to_request_ms": 213,
+  "first_content_frame_ms": 621,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 20,
+      "outputTokens": 10104,
+      "cacheReadInputTokens": 338142,
+      "cacheCreationInputTokens": 38634,
+      "webSearchRequests": 0,
+      "costUSD": 0.28943019999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4042,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 38634,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13850,
+      "outputTokens": 4046,
+      "cacheReadInputTokens": 5747,
+      "cacheCreationInputTokens": 9133,
+      "webSearchRequests": 1,
+      "costUSD": 0.014607095,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1485,
+      "cacheCreationEphemeral5mInputTokens": 9133,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-10T23:03:23.446Z"
+}
